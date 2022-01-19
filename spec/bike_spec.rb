@@ -1,7 +1,7 @@
 require './lib/Bikes.rb'
-describe Bikes do
+describe Bike do
   it 'asks if bike is working' do
-    bike = Bikes.new
+    bike = Bike.new
     bike.working? 
   end
 end
