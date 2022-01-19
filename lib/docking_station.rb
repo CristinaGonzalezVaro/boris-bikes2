@@ -1,26 +1,25 @@
-require_relative 'Bikes'
+require_relative 'bike'
 
 class DockingStation 
-  attr_reader :garage
-
-  def initialize
-    @garage = [] 
-
-  end 
-
+  
   def release_bike
-    Bikes.new 
+    fail 'No bikes available' unless @bike
+    @bike
   end
 
   def dock(bike)
-  @garage << bike
+    @bike = bike
   end
 
-  def lists_bikes
-    bikes_available = @garage.count
-    p "There are #{bikes_available} bikes available"
-  end
+ attr_reader :bike
+ 
 end
+
+
+ # def lists_bikes
+  #   bikes_available = @garage.count
+  #   p "There are #{bikes_available} bikes available"
+  # end
 
 # hey = DockingStation.new
 # bike = Bikes.new
